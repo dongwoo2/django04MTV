@@ -1,0 +1,12 @@
+{% extends "infoapp/base.html" %}
+{% block title %}Regist{% endblock title %}
+{% block headline %}학생 추가{% endblock headline %}
+{% block content %}
+<form method="post">
+    {% csrf_token %}
+    <p><input type="text" name="name" placeholder="이름"></p>
+    <p><input type="text" name="age" placeholder="나이"></p>
+    <p><textarea name ="intro">자기소개</textarea></p>
+    <p><input type="submit" value="등록"></p>
+</form>
+{% endblock %}
