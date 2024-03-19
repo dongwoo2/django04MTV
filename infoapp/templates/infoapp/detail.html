@@ -1,0 +1,30 @@
+{% extends "infoapp/base.html" %}
+{% block title %}Detail{% endblock title %}
+{% block headline %}정보{% endblock headline %}
+{% block content %}
+<table>
+    <tr>
+        <th>번호</th>
+        <td>{{ info.id }}</td>
+    </tr>
+    <tr>
+        <th>이름</th>
+        <td>{{ info.name }}</td>
+    </tr>
+    <tr>
+        <th>나이</th>
+        <td>{{ info.age }}</td>
+    </tr>
+    <tr>
+        <th>자기소개</th>
+        <td>{{ info.intro }}</td>
+    </tr>
+    <tr>
+        <th>등록일</th>
+        <td>{{ info.regdate }}</td>
+    </tr>
+</table>
+<a href="#">수정하기</a><br>
+<a href="#">삭제하기</a>
+{% endblock content %}
+
