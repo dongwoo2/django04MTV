@@ -2,14 +2,30 @@
 {% block title %}Index{% endblock title %}
 {% block headline %}학생 목록{% endblock headline %}
 {% block content %}
-<p><a href="{% url 'infoapp:add' %}">추가하기</a></p>
+<p><a href="{% url 'infoapp:add' %}"><button type="button" class="btn btn-primary btn-sm">추가하기</button></a></p>
+
 {% if info_list %}
-    <ul>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">번호</th>
+        <th scope="col">이름</th>
+        <th scope="col">나이</th>
+        <th scope="col">등록일</th>
+      </tr>
+    </thead>
+    <tbody>
         {% for info in info_list%}
-            <li>{{info.id}} - <a href="{% url 'infoapp:detail2' info.id %}">{{info.name}}({{info.age}}):{{info.regdate}}</a></li>
+        <tr>
+            <td>{{info.id}}</td>
+            <td><a href="{% url 'infoapp:detail2' info.id %}">{{info.name}}</a></td>
+            <td>{{info.age}}</td>
+            <td>{{info.regdate}}</td>
          {% comment "" %}  <li>{{info.id}} - <a href="{% url 'infoapp:detail1' %}?id={{info.id}}">{{info.name}}({{info.age}}):{{info.regdate}}</a></li>{% endcomment %}
+        </tr>
         {% endfor %}
-    </ul>
+    </tbody>
+</table>
 {% else %}
     목록이 존재하지 않습니다.
 {% endif %}
