@@ -1,0 +1,10 @@
+{% extends "infoapp/base.html" %}
+{% block title %}Remove{% endblock title %}
+{% block headline %}학생 삭제{% endblock headline %}
+{% block content %}
+<form method="post">
+    {% csrf_token %}
+    {{info.id}}번 {{info.name}}학생 정보를 삭제 하시겠습니까?
+    <p><input type="submit" value="삭제하기"></p>
+</form>
+{% endblock %}

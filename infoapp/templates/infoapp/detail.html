@@ -24,7 +24,7 @@
         <td>{{ info.regdate }}</td>
     </tr>
 </table>
-<a href="#">수정하기</a><br>
-<a href="#">삭제하기</a>
+<a href="{% url 'infoapp:edit' info.id %}">수정하기</a><br>
+<a href="{% url 'infoapp:remove' info.id %}">삭제하기</a>
 {% endblock content %}
 
